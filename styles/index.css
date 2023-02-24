@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --VeryDarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    max-width: 375px;
+    margin-top: 100px;
+    color: var(--VeryDarkBlue);
+}
+
+header > h1, .power {
+    font-size: 1.92rem;
+    font-weight: 200;
+}
+
+.power {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+}
+
+.ai {
+    margin: 20px 0 75px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--GrayishBlue);
+}
+
+.card-supervisor {
+    border-top: 5px solid var(--Cyan);
+}
+.card-team-builder {
+    border-top: 5px solid var(--Red);
+}
+.card-karma {
+    border-top: 5px solid var(--Orange);
+}
+.card-calc {
+    border-top: 5px solid var(--Blue);
+}
+
+.card-supervisor, .card-team-builder, .card-karma, .card-calc {
+    text-align: start;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2),
+                -8px -8px 16px rgba(0, 0, 0, 0.2),
+                0px 8px 16px rgba(0, 0, 0, 0.2),
+                0px -8px 16px rgba(0, 0, 0, 0);
+}
+
+.card-supervisor > .details > span, .card-team-builder > .details > span, .card-karma > .details > span, .card-calc > .details > span {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-supervisor > .img , .card-team-builder > .img , .card-karma > .img , .card-calc > .img {
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.card-para {
+    color: var(--GrayishBlue);
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        max-width: none;
+    }
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* column-gap: 20px; */
+    }
+
+    .cards-container > div:nth-child(3) {
+        grid-row: 2;
+        /* grid-column: ; */
+    }
+
+    .card-supervisor, .card-team-builder, .card-karma, .card-calc {
+        width: 365px;
+    }
+
+    .card-supervisor {
+        justify-self: center;
+    }
+}
